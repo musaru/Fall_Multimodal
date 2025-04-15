@@ -1,0 +1,38 @@
+TRAIN:
+    EPOCHS: 100
+    LABEL_SMOOTHING: 0.0
+    USE_SCALER: True
+    MAX_NORM: 100
+    ACCUM_ITER: 1
+
+DATA:
+    BATCH_SIZE: 32
+    DATASET: "urfall"
+    IN_CHANNELS: 3
+    NUM_CLASSES: 2
+    SENSOR_DIM: 4
+
+MODEL:
+    NAME: "bilstm"
+
+OPTIM:
+    TYPE: "rmsprop"
+    LR: 0.001
+
+LR_SCHEDULER:
+    TYPE: None
+
+SEED: 0
+DEVICE: "cuda"
+SAVE_CHECKPOINT: True
+RESUME_FROM: None
+PRETRAINED_WEIGHT_PATH: None
+TEST_ONLY: False
+
+NUM_WORKERS: 8
+PIN_MEMORY: True
+
+LOG_DIR: bilstm_urfall
+LOGGING_TIMING: 10
+TENSORBOARD_LOG: False
+TOP_K: [1]
